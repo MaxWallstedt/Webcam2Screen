@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include "device_list.h"
 #include "input_list.h"
+#include "capture_devices.h"
 
 static GtkBuilder *builder;
 
@@ -28,6 +29,8 @@ int main(int argc, char *argv[])
 	input_list_init();
 
 	gtk_main();
+
+	capture_devices_close_device_fd();
 
 	return 0;
 }

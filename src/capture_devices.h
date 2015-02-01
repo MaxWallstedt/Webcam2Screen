@@ -5,6 +5,7 @@
 
 int capture_devices_get_device();
 int capture_devices_get_device_fd();
+void capture_devices_close_device_fd();
 int capture_devices_set_device(int device);
 
 char *capture_devices_get_device_name(int device);

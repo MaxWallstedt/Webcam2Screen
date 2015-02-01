@@ -19,6 +19,15 @@ int capture_devices_get_device_fd()
 	return cur_fd;
 }
 
+void capture_devices_close_device_fd()
+{
+	if (cur_fd != -1) {
+		close(cur_fd);
+		cur_fd = -1;
+		cur_dev = -1;
+	}
+}
+
 int capture_devices_set_device(int device)
 {
 	int nfd;
@@ -30,7 +39,7 @@ int capture_devices_set_device(int device)
 			return -1;
 		}
 
-		close(cur_fd);
+		capture_devices_close_device_fd();
 		cur_fd = nfd;
 		cur_dev = device;
 	}
@@ -100,8 +109,7 @@ void capture_devices_get_devices(int all_devices[MAX_DEVICES],
 	char *filename;
 	int prev_dev;
 
-	close(cur_fd);
-	cur_fd = -1;
+	capture_devices_close_device_fd();
 	prev_dev = cur_dev;
 	cur_dev = -1;
 	*n_devices = 0;
