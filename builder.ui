@@ -28,6 +28,16 @@
             <property name="top-attach">0</property>
           </packing>
         </child>
+
+        <child>
+          <object id="pxfmtList" class="GtkComboBoxText">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
       </object>
     </child>
   </object>

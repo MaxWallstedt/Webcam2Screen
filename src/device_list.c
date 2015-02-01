@@ -59,6 +59,7 @@ static void changed_cb(GtkComboBox *widget,
 	if (new_dev != cur_dev) {
 		cur_dev = new_dev;
 		capture_devices_set_device(all_devices[cur_dev]);
+		input_list_reload_inputs();
 	}
 }
 

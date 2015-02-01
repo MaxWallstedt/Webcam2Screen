@@ -8,9 +8,11 @@ SRC=(
 	"src/main.c"
 	"src/device_list.c"
 	"src/input_list.c"
+	"src/pxfmt_list.c"
 	"src/xioctl.c"
 	"src/capture_devices.c"
 	"src/capture_inputs.c"
+	"src/capture_formats.c"
 )
 
 $CC $CFLAGS -o $TARGET ${SRC[@]} $LIBS

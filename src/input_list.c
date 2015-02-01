@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
-
 #include "capture_inputs.h"
+#include "pxfmt_list.h"
 #include "main.h"
 
 static gint all_inputs[MAX_INPUTS];
@@ -47,6 +47,7 @@ static void changed_cb(GtkComboBox *widget,
 	if (new_inp != cur_inp) {
 		cur_inp = new_inp;
 		capture_inputs_set_input(all_inputs[cur_inp]);
+		pxfmt_list_reload_pxfmts();
 	}
 }
 

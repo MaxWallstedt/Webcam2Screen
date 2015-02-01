@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include "device_list.h"
 #include "input_list.h"
+#include "pxfmt_list.h"
 #include "capture_devices.h"
 
 static GtkBuilder *builder;
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
 	/* Combo boxes */
 	device_list_init();
 	input_list_init();
+	pxfmt_list_init();
 
 	gtk_main();
 
