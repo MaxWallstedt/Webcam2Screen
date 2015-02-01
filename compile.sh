@@ -9,6 +9,7 @@ SRC=(
 	"src/device_list.c"
 	"src/input_list.c"
 	"src/pxfmt_list.c"
+	"src/frmsiz_list.c"
 	"src/xioctl.c"
 	"src/capture_devices.c"
 	"src/capture_inputs.c"

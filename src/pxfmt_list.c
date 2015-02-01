@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include "capture_formats.h"
+#include "frmsiz_list.h"
 #include "main.h"
 
 static gint all_pxfmts[MAX_PXFMTS];
@@ -47,6 +48,7 @@ static void changed_cb(GtkComboBox *widget,
 	if (new_pxfmt != cur_pxfmt) {
 		cur_pxfmt = new_pxfmt;
 		capture_formats_set_pxfmt(all_pxfmts[cur_pxfmt]);
+		frmsiz_list_reload_frmsizs();
 	}
 }
 
